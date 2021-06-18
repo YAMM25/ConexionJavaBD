@@ -1,23 +1,25 @@
 package dto;
 
+import java.util.ArrayList;
+
 public class FilmCategoryDto {
 
-    private int film_id;
-    private int category_id;
+    private ArrayList<String> codigo_cat = new ArrayList<String>();
+    private ArrayList<String> codigo_fil = new ArrayList<String>();
 
-    public int getFilm_id() {
-        return film_id;
+    public ArrayList<String> getCodigo_cat() {
+        return codigo_cat;
     }
 
-    public void setFilm_id(int film_id) {
-        this.film_id = film_id;
+    public void setCodigo_cat(ArrayList<String> codigo_cat) {
+        this.codigo_cat = codigo_cat;
     }
 
-    public int getCategory_id() {
-        return category_id;
+    public ArrayList<String> getCodigo_fil() {
+        return codigo_fil;
     }
 
-    public void setCategory_id(int category_id) {
-        this.category_id = category_id;
+    public void setCodigo_fil(ArrayList<String> codigo_fil) {
+        this.codigo_fil = codigo_fil;
     }
 }

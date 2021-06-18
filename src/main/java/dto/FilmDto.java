@@ -1,59 +1,34 @@
 package dto;
 
+import java.util.ArrayList;
+
 public class FilmDto {
 
-    private  int film_id;
-    private  String title;
-    private  String description;
-    private  int language_id;
-    private  int original_language_id;
-    private  int rental_duration;
+    private ArrayList<String> codigo_fil = new ArrayList<String>();
+    private ArrayList<String> nombre_fil = new ArrayList<String>();
+    private ArrayList<String> description_fil = new ArrayList<String>();
 
-    public int getFilm_id() {
-        return film_id;
+    public ArrayList<String> getCodigo_fil() {
+        return codigo_fil;
     }
 
-    public void setFilm_id(int film_id) {
-        this.film_id = film_id;
+    public void setCodigo_fil(ArrayList<String> codigo_fil) {
+        this.codigo_fil = codigo_fil;
     }
 
-    public String getTitle() {
-        return title;
+    public ArrayList<String> getNombre_fil() {
+        return nombre_fil;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setNombre_fil(ArrayList<String> nombre_fil) {
+        this.nombre_fil = nombre_fil;
     }
 
-    public String getDescription() {
-        return description;
+    public ArrayList<String> getDescription_fil() {
+        return description_fil;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public int getLanguage_id() {
-        return language_id;
-    }
-
-    public void setLanguage_id(int language_id) {
-        this.language_id = language_id;
-    }
-
-    public int getOriginal_language_id() {
-        return original_language_id;
-    }
-
-    public void setOriginal_language_id(int original_language_id) {
-        this.original_language_id = original_language_id;
-    }
-
-    public int getRental_duration() {
-        return rental_duration;
-    }
-
-    public void setRental_duration(int rental_duration) {
-        this.rental_duration = rental_duration;
+    public void setDescription_fil(ArrayList<String> description_fil) {
+        this.description_fil = description_fil;
     }
 }

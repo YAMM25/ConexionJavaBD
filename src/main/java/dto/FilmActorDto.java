@@ -1,23 +1,25 @@
 package dto;
 
+import java.util.ArrayList;
+
 public class FilmActorDto {
 
-    private int actor_id;
-    private int film_id;
+    private ArrayList<String> codigo_act = new ArrayList<String>();
+    private ArrayList<String> nombre_fil = new ArrayList<String>();
 
-    public int getActor_id() {
-        return actor_id;
+    public ArrayList<String> getCodigo_act() {
+        return codigo_act;
     }
 
-    public void setActor_id(int actor_id) {
-        this.actor_id = actor_id;
+    public void setCodigo_act(ArrayList<String> codigo_act) {
+        this.codigo_act = codigo_act;
     }
 
-    public int getFilm_id() {
-        return film_id;
+    public ArrayList<String> getNombre_fil() {
+        return nombre_fil;
     }
 
-    public void setFilm_id(int film_id) {
-        this.film_id = film_id;
+    public void setNombre_fil(ArrayList<String> nombre_fil) {
+        this.nombre_fil = nombre_fil;
     }
 }

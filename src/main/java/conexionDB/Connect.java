@@ -1,36 +1,43 @@
 package conexionDB;
 
-import dto.ActorDto;
-
 import java.sql.*;
+import java.util.ArrayList;
 
 public class Connect {
 
-    public String conexion(String nombre,String apellido){
+
+    public ArrayList<String> actorCod = new ArrayList<>();
+    public ArrayList<String> actorNom = new ArrayList<String>();
+    public ArrayList<String> actorApell= new ArrayList<>();
+    public ArrayList<String> peliculCod = new ArrayList<>();
+    public ArrayList<String> peliculaNom= new ArrayList<>();
+    public ArrayList<String> categoriaCod = new ArrayList<>();
+    public ArrayList<String> categorialaNom= new ArrayList<>();
+    //public ArrayList<String> list = new ArrayList<>();
+
+    public void conexion(String consulta){
 
         // establecer conexión con la BD
-        Connection connection = null;
+         Connection connection = null;
 
 
 
-        ActorDto actor = new ActorDto();
-        nombre= actor.getNombre_act();
-        apellido= actor.getApellido_act();
 
         try {
             connection = DriverManager.getConnection("jdbc:mysql://sofka-training.cpxphmd1h1ok.us-east-1.rds.amazonaws.com/YarleyMoreno","sofka_training","BZenX643bQHw");
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(40);
-            ResultSet rs = statement.executeQuery("select fi.film_id, fi.title,ac.first_name,ac.actor_id ,ca.name from actor ac\n" +
-                    "inner join film_actor fac on ac.actor_id = fac.actor_id\n" +
-                    "inner join film fi on fac.film_id = fi.film_id\n" +
-                    "inner join film_category fca on fca.film_id = fi.film_id\n" +
-                    "inner join category ca on ca.category_id = fca.category_id\n" +
-                    "where ac.first_name ="+nombre+" and ac.last_name ="+apellido);
+            ResultSet rs = statement.executeQuery(consulta);
             while (rs.next()){
-                System.out.println("Código_pel: " + rs.getString("fi.film_id")+" Titulo: "+ rs.getString("fi.title")
-                        +" nombre_actor: " + rs.getString("ac.first_name")+" actor_id: "+ rs.getString("ac.actor_id")
-                        +" nombre_categoria: "+ rs.getString("ca.name"));
+                actorCod.add(rs.getString("ac.actor_id"));
+                actorNom.add(rs.getString("ac.first_name"));
+                actorApell.add(rs.getString("ac.last_name"));
+                peliculCod.add(rs.getString("fi.film_id"));
+                peliculaNom.add(rs.getString("fi.title"));
+                categoriaCod.add(rs.getString("ca.category_id"));
+                categorialaNom.add(rs.getString("ca.name"));
+
+
             }
 
         }catch (SQLException e){
@@ -44,9 +51,9 @@ public class Connect {
                 System.out.println(e.getMessage());
             }
         }
-        return nombre;
 
 
     }
+
 
 }

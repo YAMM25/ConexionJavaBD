@@ -1,14 +1,14 @@
 dto/FilmDto.java
  dto.FilmDto
-dto/FilmCategoryDto.java
- dto.FilmCategoryDto
 dto/FilmActorDto.java
  dto.FilmActorDto
 dto/CategoryDto.java
  dto.CategoryDto
-Connect.java
- Connect
+dto/FilmCategoryDto.java
+ dto.FilmCategoryDto
 dto/ActorDto.java
  dto.ActorDto
-Main.java
- Main
+conexionDB/Connect.java
+ conexionDB.Connect
+main/Main.java
+ main.Main
